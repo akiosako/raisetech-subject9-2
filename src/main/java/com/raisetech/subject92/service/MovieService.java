@@ -8,6 +8,6 @@ public interface MovieService {
 
     List<Movie> findAll();
 
-    Movie findByPublishedYear(int published_year);
+    Movie findByPublishedYear(int publishedYear);
 
 }

@@ -23,7 +23,7 @@ public class MovieController {
     }
 
     @GetMapping("/movies/{published_year}")
-    public List<MovieResponse> getMovies(@RequestParam("published_year") int published_year) {
+    public List<MovieResponse> getMovies(@RequestParam("published_year") int publishedYear) {
         return movieService.findAll().stream().map(MovieResponse::new).collect(Collectors.toList());
     }
 }
