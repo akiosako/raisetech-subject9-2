@@ -8,6 +8,6 @@ public interface MovieService {
 
     List<Movie> findAll();
 
-    List<Movie> findByPublishedYear(int publishedYear) throws Exception;
+    List<Movie> findByPublishedYear(int published_year);
 
 }

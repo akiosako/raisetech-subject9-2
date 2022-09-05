@@ -22,11 +22,8 @@ public class MovieController {
     }
 
     @GetMapping("/movies/{published_year}")
-    public List<Movie> getMovies(@RequestParam(name = "published_year") int publishedYear) {
-        try {
-            return movieService.findByPublishedYear(publishedYear);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public List<Movie> getMovies(@RequestParam("published_year") int published_year) {
+        return movieService.findByPublishedYear(published_year);
+
     }
 }

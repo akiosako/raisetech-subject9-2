@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Movie {
-    private int publishedYear;
+    private int published_year;
     private String movie;
 
 }
