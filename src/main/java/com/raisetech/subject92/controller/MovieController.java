@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class MovieController {
@@ -22,8 +23,7 @@ public class MovieController {
     }
 
     @GetMapping("/movies/{published_year}")
-    public List<Movie> getMovies(@RequestParam("published_year") int published_year) {
-        return movieService.findByPublishedYear(published_year);
-
+    public List<MovieResponse> getMovies(@RequestParam("published_year") int published_year) {
+        return movieService.findAll().stream().map(MovieResponse::new).collect(Collectors.toList());
     }
 }
