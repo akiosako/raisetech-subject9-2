@@ -22,7 +22,7 @@ public class MovieController {
     }
 
     @GetMapping("/movies/{published_year}")
-    public Movie getMovies(@RequestParam(name = "published_year") int publishedYear) {
+    public List<Movie> getMovies(@RequestParam(name = "published_year") int publishedYear) {
         try {
             return movieService.findByPublishedYear(publishedYear);
         } catch (Exception e) {
