@@ -11,8 +11,8 @@ public interface MovieMapper {
     @Select("SELECT * FROM movie_list")
     List<Movie> findAll();
 
-    @Select("SELECT * FROM movie_list WHERE published_year = #{published_year}")
-    Movie findByPublishedYear(int publishedYear);
+    @Select("SELECT * FROM movie_list WHERE published_year = #{publishedYear}")
+    List<Movie> findByPublishedYear(int publishedYear);
 
 }
 
